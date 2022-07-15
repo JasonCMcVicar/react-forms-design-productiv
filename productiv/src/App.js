@@ -10,6 +10,7 @@ import "./App.css";
  **/
 
 function App() {
+  console.log('app component' )
   return (
       <main className="App">
         <header className="container-fluid pt-4 pb-1">
@@ -20,7 +21,7 @@ function App() {
         </header>
 
         <section className="container mt-4">
-          <TodoApp initialTodos={[
+        <TodoApp initialTodos={[
             {
               id: 1,
               title: "Code!",
@@ -39,7 +40,7 @@ function App() {
               description: "In bed by 11:15",
               priority: 3,
             },
-          ]} />
+          ]} /> 
 
           <Footer />
         </section>
@@ -48,3 +49,4 @@ function App() {
 }
 
 export default App;
+

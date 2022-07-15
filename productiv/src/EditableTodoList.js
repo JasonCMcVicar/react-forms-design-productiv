@@ -12,6 +12,7 @@ import EditableTodo from "./EditableTodo";
  */
 
 function EditableTodoList({ todos, update, remove }) {
+  console.log({ todos, update, remove }, 'editabletodolist component' )
   return (
     <div>
       {todos.map((todo) => (
