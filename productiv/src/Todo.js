@@ -1,5 +1,5 @@
 import React from "react";
-
+//(priority: {todo.priority})
 /** Simple presentation component for a todo.
  *
  * Props:
@@ -8,12 +8,13 @@ import React from "react";
  * { EditableTodo, TopTodo } -> Todo
  **/
 
-function Todo({ id, title, description, priority }) {
-  console.log({ id, title, description, priority }, 'todo component');
+function Todo(todo) {
+  console.log("}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}");
+  console.log("the todo object is ..... ", todo);
   return (
       <div className="Todo">
-        <div><b>{title}</b> <small>(priority: {priority})</small></div>
-        <div><small>{description}</small></div>
+        <div><b>{todo.title}</b> <small></small></div>
+        <div><small>{todo.description}</small></div>
       </div>
   );
 }

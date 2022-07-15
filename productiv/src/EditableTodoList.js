@@ -11,6 +11,7 @@ import EditableTodo from "./EditableTodo";
  * TodoApp -> EditableTodoList -> [ EditableTodo, ... ]
  */
 
+
 function EditableTodoList({ todos, update, remove }) {
   console.log({ todos, update, remove }, 'editabletodolist component' )
   return (
