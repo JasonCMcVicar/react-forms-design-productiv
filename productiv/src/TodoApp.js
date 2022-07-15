@@ -25,14 +25,23 @@ function TodoApp({ initialTodos }) {
   priority: 1,}
 
   /** add a new todo to list */
-  function create() {
+  function create(formData) {
     const newTodo = {};
     newTodo["id"] = uuid();
+    newTodo["title"] = formData.title;
+    newTodo["description"] = formData.description;
+    newTodo["priority"] = formData.priority;
     setTodos((todos) => [...todos, newTodo]);
   }
 
   /** update a todo with updatedTodo */
-  function update(updatedTodo) {
+  function update(updatedTodo, formData) {
+    //original >> updatedTodo = {id:456, title:..., ..., ...}
+    //formData = {id:123, title:..., ..., .. }
+    console.log('updated to do original: ', updatedTodo, '&&&&&formdata', formData)
+    updatedTodo = {...formData, id: uuid()}; 
+    remove(updatedTodo.id);
+    console.log(updatedTodo, 'NEW UPDATED TO DO *************');
     setTodos((todos) => [...todos, updatedTodo]);
   }
 
@@ -41,8 +50,8 @@ function TodoApp({ initialTodos }) {
     setTodos((todos) => todos.filter((todo) => todo.id !== id));
   }
 
-  function handleSave() {
-    create();
+  function handleSave(title, description, priority) {
+    create(title, description, priority);
   }
   console.log("==========================================");
   console.log("todos: ", todos, "and length", todos.length);
